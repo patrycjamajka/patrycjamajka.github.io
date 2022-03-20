@@ -1,129 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
 $darkColor:#181824;
 $secColor:#282162;
 $primaryColor:#7562E0;
-$white:white
-$marginSize 3.5rem;
+$white:white;
+$marginSize: 3.5rem;
 
 h1,h2,h3,h4 {color:$primaryColor}
 
+.button {
+    text-decoration: none;
+    border: 2px solid$primaryColor;
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: $white;
+    &.fill{
+        background-color: $primaryColor;
+    }
+
+}
+
 body{
+    margin: 0;
     font-family: "Poppins",sans-serif;
     background-color: $darkColor;
     color: $primaryColor;
-    padding:$marginSize*2 0;
     color: $white;
     > header{
-        
+        background-color: $darkColor;
+        position: sticky;
+        top: 0px;
+        color: $white;
         border: 2px dashed yellow; 
         height: 3rem;
         display: flex;
         align-items: center;
-    
-    }
-    input {
-        display: none;
-    }
-    label{
-        border: 2px dashed red;
-        width: 3rem;
-        height: 3rem;
-        position: fixed;
-        
-        cursor: pointer;
-    }
-    nav{
-        display: none;
-        position: fixed;
-        border: 2px dashed red;
-        left: 0;
-        top: 0%;
-        width: 100%;
-        height: 100%;
-        margin-top: 3.5rem;
-        ul{
-            list-style-type: none;
-            position: fixed;
-            
-        }
-    }
-    //tutaj jest tzw hamburger, funkcja umozliwia klikniecie i odklikniecie, pokazanie menu//
-    #toggler:checked ~ nav{ display: block;}
-    //tu jak ma wygladac hamburger po kliknieciu jak jest rozwiniety//
-    #toggler:checked ~ label{ 
-        div{
-            //ustawienie animacji z 3 kresek na X//
-            transition: .4s;
-            &:nth-child(1){
-                //obracanie pierwszej kreski o 45 stopni//
-                transform: rotate(45deg);
-                //to jest wyrownanie kreski na srodek//
-                top:calc(50% - 2.5px);
-            }
-            &:nth-child(2){
-                //usuniecie kreski nr 2//
-                opacity: 0;
-            }
-            &:nth-child(3) {
-                transform: rotate(-45deg);
-                top:calc(50% - 2.5px);
-            }
-        }
-    }
-    
-    
-    h1{
-        margin: 0 0 0 3.5rem;
-        display: inline-block;
-    }
-    div {
-        background-color: black;
-        height: 5px;
-        width: 100%;
-        position: absolute;
-        &:nth-child(1) {
-        top:calc(25% - 2.5px);
-        }
-        &:nth-child(2) {
-            top:calc(50% - 2.5px);
-    
-        }
-        &:nth-child(3) {
-            top:calc(75% - 2.5px);
-    
-        }
-    }
-    
-    //sprawia ze przy wielkosci min 768px z widocznego hamburgera zmienia sie na zwykle menu//
-    @media (min-width:768px) {
-        label{
+        input {
             display: none;
         }
-        nav{
-            position: static;
-            margin: 0%;
-            display: flex;
-            justify-content: flex-end;
+        label{
+
+            z-index: 1;
+            border: 2px dashed red;
+            width: 3rem;
+            height: 3rem;
+            position: absolute;
+            cursor: pointer;
+            div {
+                background-color:$primaryColor;
+                
+                height: 5px;
+                width: 100%;
+                position: absolute;
+                &:nth-child(1) {
+                top:calc(25% - 2.5px);
+                }
+                &:nth-child(2) {
+                    top:calc(50% - 2.5px);
             
-            //to robi przerwy pomiedzy przyciskami menu//
-            gap:1rem;
+                }
+                &:nth-child(3) {
+                    top:calc(75% - 2.5px);
+            
+                }
+            }
+        }
+
+        nav{
+            transition:.5s;
+            background-color:$darkColor;
+            position: fixed;
+            border: 2px dashed red;
+            left: 0;
+            top: calc(-100% - 3.5rem);
+            width: 100%;
+            height: fit-content;
+            margin-top: 3.5rem;
+            background-color: $darkColor;
             ul{
-                //wylaczenie kropeczek z ul//
+                margin:0;
                 list-style-type: none;
+                // position: fixed;
+                
+                width: 100%;
+                a{
+                    text-decoration: none;
+                    color: $white;
+                    margin: 5px 5px 5px 5px;
+                }
+                
+            }
+        }
+        //tutaj jest tzw hamburger, funkcja umozliwia klikniecie i odklikniecie, pokazanie menu//
+        #toggler:checked ~ nav{
+             //display: block;
+             //top zero sprawia ze menu wyjezdza 
+             top: 0;
+            }
+        //tu jak ma wygladac hamburger po kliknieciu jak jest rozwiniety//
+        #toggler:checked ~ label{ 
+            div{
+                //ustawienie animacji z 3 kresek na X//
+                transition: .4s;
+                &:nth-child(1){
+                    //obracanie pierwszej kreski o 45 stopni//
+                    transform: rotate(45deg);
+                    //to jest wyrownanie kreski na srodek//
+                    top:calc(50% - 2.5px);
+                }
+                &:nth-child(2){
+                    //usuniecie kreski nr 2//
+                    opacity: 0;
+                }
+                &:nth-child(3) {
+                    transform: rotate(-45deg);
+                    top:calc(50% - 2.5px);
+                }
+            }
+        }
+        
+        
+        h1{
+            margin: 0 0 0 3.5rem;
+            display: inline-block;
+        }
+
+                //sprawia ze przy wielkosci min 768px z widocznego hamburgera zmienia sie na zwykle menu//
+        @media (min-width:768px) {
+            label{
+                display: none;
+            }
+            nav{
+                position: static;
+                margin: 0;
                 display: flex;
                 justify-content: flex-end;
-                margin-right: 3.5rem;
-            }
+                
+                //to robi przerwy pomiedzy przyciskami menu//
+                gap:1rem;
+                ul{
+                    //wylaczenie kropeczek z ul//
+                    list-style-type: none;
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-right: 3.5rem;
+                    gap:1rem;
+                    padding: 0;
+                }
+        
+             }
+        
+        }
+       
+        
+    }
+     //to jest dla wszytkich sekcji
+    >section, main {
+        margin:0 $marginSize;
+    @media(min-width: 768px){
+        width: 60%;
+        margin: 0 auto;
+        } 
+    @media(min-width:1280px){
+        width: 50%;
+        }       
+    }
+    #home{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        padding:$marginSize*2 0;
+        padding:$marginSize*2 0;
+        .imgWrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        p,h2{
+            color: $white;;
+        }
+        @media (min-width:768px) {
+            flex-direction: row;
+        }
+    }
+
+   #about{
+       h2{margin-bottom: 0;}
+       >p{margin: 0;
+    font-size: .8em;}
+       div{
+           display: flex;
+           align-items: center;
+
+           span{
+               color: $primaryColor;
+               font-size:  3.5em;
+           }
+           p{
+               padding-left: 1em;
+
+           }
+           
+        }
+   }
     
+
+}
+.imgwrapper{
+    img{
+        max-width: 100%;
+    }
+}
+   //  padding:$marginSize*2 0;
+  //   display: flex;
+  //   justify-content: center;
+  //   border: 5px dashed violet;}
+     
+ 
+.wrapper {
+    p {
+        margin:.5rem auto;
+        font-size:clamp(.7em, 6vw,2.5em);
+    }
+    h2 {
+        
+        color: $white;
+        margin: 0;
+        font-size:clamp(1em, 10vw,4em);
+        line-height: 1em;
+    }
+    .desc {
+        font-size: .7em;
+        padding-right: 5em;
+
+    }
+
+    .buttonfield {
+        padding-top: 18px;
+        max-width: 30em;
+        width: 100%;
+    }
+
+    .imgwrapper{
+        flex: 1;
+    }
+}
+
+#services{
+    section{
+        display: grid;
+        gap: 1em;
+        
+        article {
+            display: grid;
+            place-items: center;
+            border: 3px solid $primaryColor;
+            border-radius: 16px;
+            grid-template-rows: 2fr 1fr 4fr;
+            p{text-align: center;}
+            h3,p{text-align: center;}
+            h3 { margin: 0; color:$white;}
+            img{align-self: end;}
+            p{align-self: start;}
+
+            &:nth-child(even) {
+                border-color:$white;
+                h3 {color: $primaryColor;}
+
+            }
+
+           
+            }
+
         }
     
     }
+
+    @media (min-width:768px)and (max-width:1250px) {
+        section{
+        grid-template-columns:1fr 1fr  ;
+        padding-top: 0;
+        }
+
     }
- .imgwrapper{
-    padding:$marginSize*2 0;
-     display: flex;
-     justify-content: center;
-     border: 5px dashed violet;}
-     
- 
 
-
+    @media (min-width:1060px) {
+        section{grid-template-columns:1fr 1fr 1fr;}
+        article{padding-top: 0;}
+        
+    }
