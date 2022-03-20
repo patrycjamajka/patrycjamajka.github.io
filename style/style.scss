@@ -3,6 +3,7 @@ $darkColor:#181824;
 $secColor:#282162;
 $primaryColor:#7562E0;
 $white:white;
+$cardbackground:#31313F;
 $marginSize: 3.5rem;
 
 h1,h2,h3,h4 {color:$primaryColor}
@@ -288,4 +289,26 @@ body{
         section{grid-template-columns:1fr 1fr 1fr;}
         article{padding-top: 0;}
         
+    }
+
+
+    #projects{
+        .container{
+            display: flex;
+            gap: 1em;
+            flex-wrap: wrap;
+            justify-content: center;
+            article{
+                padding: 1em;
+                background-color: $cardbackground;
+                border-radius: 8px;
+                max-width: 311px;
+                img{
+                    
+                    max-width: 100%;
+                }
+
+
+            }
+        }
     }

@@ -252,4 +252,19 @@ body #about div p {
   article {
     padding-top: 0;
   }
+}
+#projects .container {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#projects .container article {
+  padding: 1em;
+  background-color: #31313F;
+  border-radius: 8px;
+  max-width: 311px;
+}
+#projects .container article img {
+  max-width: 100%;
 }/*# sourceMappingURL=style.css.map */
