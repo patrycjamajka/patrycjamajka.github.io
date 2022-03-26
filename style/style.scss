@@ -10,11 +10,12 @@ h1,h2,h3,h4 {color:$primaryColor}
 
 .button {
     text-decoration: none;
-    border: 2px solid$primaryColor;
+    border: 2px solid $primaryColor;
     border-radius: 5px;
     padding: 5px 15px;
     color: $white;
-    &.fill{
+    font-size:clamp(.4em,.7vw,.7em)
+    fill{
         background-color: $primaryColor;
     }
 
@@ -258,6 +259,7 @@ body{
             border: 3px solid $primaryColor;
             border-radius: 16px;
             grid-template-rows: 2fr 1fr 4fr;
+            
             p{text-align: center;}
             h3,p{text-align: center;}
             h3 { margin: 0; color:$white;}
@@ -265,7 +267,7 @@ body{
             p{align-self: start;}
 
             &:nth-child(even) {
-                border-color:$white;
+                border-color: $primaryColor;
                 h3 {color: $primaryColor;}
 
             }
@@ -295,10 +297,11 @@ body{
     #projects{
         .container{
             display: flex;
-            gap: 1em;
+            //gap: 1em;
             flex-wrap: wrap;
             justify-content: center;
             article{
+                margin: .5em;
                 padding: 1em;
                 background-color: $cardbackground;
                 border-radius: 8px;
@@ -311,4 +314,78 @@ body{
 
             }
         }
+        
+    @media (min-width:768px) and (max-width:1250px){
+        article{
+          // 33% - obszar jednego przycisku ( 100% /3)
+          // 9em - wszystkie paddingi i marginesy
+          // i gapĂłw w kontenerze ( 4paddingi i 1 gap)
+          width:calc(33% - 3em);
+        }
+      }
+      @media (min-width:1250px){
+        article{
+          // 33% - obszar jednego przycisku (100%/3)
+          // 8em - wszystkie paddingi i gapy
+          // w kontenerze ( 6paddingi i 2 gapy)
+          width:calc( 33% - 9em/3 );
+        }
     }
+    }
+
+        #contact{
+            h2{color: $primaryColor;}
+            form{
+                h3{color: $white;}
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                input, textarea {
+                    box-sizing: border-box;
+                    width: 100%;
+                    border-radius: 8px;
+                    padding: 1em;
+                    margin: .5em 0;
+                    background-color: $cardbackground;
+                    border: none;
+                    outline: 0;
+                    color: $white;
+
+
+
+
+                    }
+
+            }
+
+            @media (min-width:768px ){
+                display: flex;
+                header{
+                    padding-right: 1.5em;
+                }
+            }
+
+
+        }
+
+        footer{
+            padding: 2rem;
+            padding-bottom: 1rem;
+            .links{
+                display:grid ;
+                justify-content: space-between;
+                a{
+                    color: $white;
+                    text-decoration: none;
+                    opacity: .5;
+                    
+                }
+            }
+        }
+       
+
+        
+    
+
+
+    
