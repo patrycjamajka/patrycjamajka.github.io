@@ -20,9 +20,13 @@ fill {
   0% {
     border-color: red;
   }
-  50% {
+  25% {
     -webkit-transform: scale(1.2) rotate(10dag);
             transform: scale(1.2) rotate(10dag);
+  }
+  75% {
+    -webkit-transform: scale(1.2) rotate(-5dag);
+            transform: scale(1.2) rotate(-5dag);
   }
   100% {
     border-color: blue;
@@ -33,9 +37,13 @@ fill {
   0% {
     border-color: red;
   }
-  50% {
+  25% {
     -webkit-transform: scale(1.2) rotate(10dag);
             transform: scale(1.2) rotate(10dag);
+  }
+  75% {
+    -webkit-transform: scale(1.2) rotate(-5dag);
+            transform: scale(1.2) rotate(-5dag);
   }
   100% {
     border-color: blue;
@@ -309,6 +317,7 @@ body #about div p {
 }
 
 #services section article {
+  background-color: #181824;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -319,8 +328,8 @@ body #about div p {
 }
 
 #services section article:hover {
-  -webkit-animation: selectItem 2s;
-          animation: selectItem 2s;
+  -webkit-animation: selectItem 2s ease-out;
+          animation: selectItem 2s ease-out;
 }
 
 #services section article p {

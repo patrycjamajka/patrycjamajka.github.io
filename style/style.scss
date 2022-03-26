@@ -25,9 +25,12 @@ h1,h2,h3,h4 {color:$primaryColor}
 0%{
     border-color: red;
 }
-50%{
+25%{
     
     transform: scale(1.2) rotate(10dag);
+}
+75%{
+    transform: scale(1.2) rotate(-5dag);
 }
 100%{
     border-color: blue;
@@ -268,8 +271,9 @@ body{
         
         article {
             &:hover{
-                animation: selectItem 2s ;
+                animation: selectItem 2s ease-out;
             }
+            background-color: $darkColor;
             display: grid;
             place-items: center;
             border: 3px solid $primaryColor;
