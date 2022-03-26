@@ -21,12 +21,12 @@ fill {
     border-color: red;
   }
   25% {
-    -webkit-transform: scale(1.2) rotate(10dag);
-            transform: scale(1.2) rotate(10dag);
+    -webkit-transform: scale(1.2) rotate(10deg);
+            transform: scale(1.2) rotate(10deg);
   }
   75% {
-    -webkit-transform: scale(1.2) rotate(-5dag);
-            transform: scale(1.2) rotate(-5dag);
+    -webkit-transform: scale(1.2) rotate(-5deg);
+            transform: scale(1.2) rotate(-5deg);
   }
   100% {
     border-color: blue;
@@ -38,12 +38,12 @@ fill {
     border-color: red;
   }
   25% {
-    -webkit-transform: scale(1.2) rotate(10dag);
-            transform: scale(1.2) rotate(10dag);
+    -webkit-transform: scale(1.2) rotate(10deg);
+            transform: scale(1.2) rotate(10deg);
   }
   75% {
-    -webkit-transform: scale(1.2) rotate(-5dag);
-            transform: scale(1.2) rotate(-5dag);
+    -webkit-transform: scale(1.2) rotate(-5deg);
+            transform: scale(1.2) rotate(-5deg);
   }
   100% {
     border-color: blue;
@@ -313,7 +313,6 @@ body #about div p {
 #services section {
   display: -ms-grid;
   display: grid;
-  gap: 1em;
 }
 
 #services section article {

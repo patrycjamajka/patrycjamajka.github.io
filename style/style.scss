@@ -27,10 +27,10 @@ h1,h2,h3,h4 {color:$primaryColor}
 }
 25%{
     
-    transform: scale(1.2) rotate(10dag);
+    transform: scale(1.2) rotate(10deg);
 }
 75%{
-    transform: scale(1.2) rotate(-5dag);
+    transform: scale(1.2) rotate(-5deg);
 }
 100%{
     border-color: blue;
@@ -267,7 +267,7 @@ body{
 #services{
     section{
         display: grid;
-        gap: 1em;
+        //gap: 1em;
         
         article {
             &:hover{
