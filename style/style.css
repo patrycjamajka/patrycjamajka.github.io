@@ -16,6 +16,32 @@ fill {
   background-color: #7562E0;
 }
 
+@-webkit-keyframes selectItem {
+  0% {
+    border-color: red;
+  }
+  50% {
+    -webkit-transform: scale(1.2) rotate(10dag);
+            transform: scale(1.2) rotate(10dag);
+  }
+  100% {
+    border-color: blue;
+  }
+}
+
+@keyframes selectItem {
+  0% {
+    border-color: red;
+  }
+  50% {
+    -webkit-transform: scale(1.2) rotate(10dag);
+            transform: scale(1.2) rotate(10dag);
+  }
+  100% {
+    border-color: blue;
+  }
+}
+
 body {
   margin: 0;
   font-family: "Poppins",sans-serif;
@@ -290,6 +316,11 @@ body #about div p {
   border-radius: 16px;
   -ms-grid-rows: 2fr 1fr 4fr;
       grid-template-rows: 2fr 1fr 4fr;
+}
+
+#services section article:hover {
+  -webkit-animation: selectItem 2s;
+          animation: selectItem 2s;
 }
 
 #services section article p {
